@@ -2,4 +2,7 @@
 /// * Author:      郭文龙
 /// * Date:        2022/6/28 11:02
 /// * Email:       guowenlong20000@sina.com
-library get;
+library multitype;
+
+export 'multitype/item_view_binder.dart';
+export 'multitype/multitype_listview.dart';
