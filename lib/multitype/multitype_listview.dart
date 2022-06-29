@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'item_view_binder.dart';
+import 'multitype_adapter.dart';
 
 /// * Description: 多种 Type 的 ListView
 /// * Author:      郭文龙
@@ -10,11 +11,8 @@ import 'item_view_binder.dart';
 class MultiTypeListView extends ListView {
   final List<dynamic> items;
 
-  final List<ItemViewBinder> widgetBuilders;
-
   MultiTypeListView({
     required this.items,
-    required this.widgetBuilders,
     Key? key,
     Axis scrollDirection = Axis.vertical,
     bool reverse = false,
@@ -32,8 +30,7 @@ class MultiTypeListView extends ListView {
     List<Widget> children = const <Widget>[],
     int? semanticChildCount,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
   }) : super.builder(
@@ -55,7 +52,12 @@ class MultiTypeListView extends ListView {
           restorationId: restorationId,
           clipBehavior: clipBehavior,
           itemBuilder: (context, index) {
-            return const Text("111");
+            var multiTypeAdapter = MultiTypeAdapter();
+            var item = items[index];
+            var itemViewBinder =multiTypeAdapter.itemViewBinders.firstWhere((element) => element.isMatch(item, index));
+            var linker = itemViewBinder.findLinker(item, index);
+            itemViewBinder = linker?.call() ?? itemViewBinder;
+            return itemViewBinder.buildWidget(context, item, index);
           },
         );
 }
