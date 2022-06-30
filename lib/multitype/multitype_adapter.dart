@@ -1,24 +1,26 @@
 import 'dart:collection';
 
 import 'item_view_binder.dart';
-
-typedef Linker<T> = ItemViewBinder<T> Function({int position, T item});
+import 'multitype_listview.dart';
 
 /// * Description: MultiType的Adapter
 /// * Author:      郭文龙
 /// * Date:        2022/6/29 23:04
 /// * Email:       guowenlong20000@sina.com
 class MultiTypeAdapter {
-  HashMap<String, Linker> map = HashMap();
+  HashMap<int, Linker> map = HashMap();
 
   List<ItemViewBinder> itemViewBinders = [];
 
   void register<T>(ItemViewBinder<T> binder) {
+    T.runtimeType.toString();
+
     itemViewBinders.add(binder);
     binder.adapter = this;
   }
 
   void registerOneToMany<T>(Linker<T> call) {
-    map[T.runtimeType.toString()] = call as Linker;
+    var a = T.runtimeType.hashCode;
+    map[a] = call;
   }
 }

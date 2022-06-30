@@ -1,7 +1,9 @@
-import 'package:flutter/gestures.dart';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import 'multitype_adapter.dart';
+import 'multitype_listview.dart';
 
 /// * Description:
 /// * Author:      郭文龙
@@ -11,11 +13,12 @@ abstract class ItemViewBinder<T> {
   MultiTypeAdapter? adapter;
 
   bool isMatch(dynamic item, int index) {
-    return item is T;
+    return item.runtimeType == T;
   }
 
   Linker<T>? findLinker(dynamic item, int index) {
-    Linker? linker = adapter?.map[T.runtimeType.toString()];
+    var a = item.runtimeType.hashCode;
+    Linker? linker = adapter?.map[item.runtimeType.hashCode];
     if (linker != null) {
       return linker as Linker<T>;
     } else {
