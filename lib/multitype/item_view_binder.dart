@@ -14,7 +14,7 @@ abstract class ItemViewBinder<T> {
   }
 
   Linker<T>? findLinker(dynamic item, int index) {
-    Linker? linker = adapter?.map[item.runtimeType.hashCode];
+    Linker? linker = adapter?.links[item.runtimeType.hashCode];
     if (linker != null) {
       return linker as Linker<T>;
     } else {

@@ -3,8 +3,6 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:flutter_multitype/multitype.dart';
 
-import 'item_view_binder.dart';
-
 typedef Register = Function(MultiTypeAdapter adapter);
 
 typedef Linker<T> = ItemViewBinder<T> Function(int position, dynamic item);
@@ -20,9 +18,15 @@ class MultiTypeAdapter {
     return adapter;
   }
 
-  HashMap<int, Linker> map = HashMap();
+  static const bool inProduction = bool.fromEnvironment("dart.vm.product");
+
+  HashMap<int, Linker> links = HashMap();
 
   List<ItemViewBinder> itemViewBinders = [];
+
+  ItemViewBinder? _unsupportedViewBinder;
+
+  ItemViewBinder? _debugViewBinder;
 
   void register<T>(ItemViewBinder<T> binder) {
     itemViewBinders.add(binder);
@@ -30,7 +34,19 @@ class MultiTypeAdapter {
   }
 
   void registerOneToMany<T>(Linker<T> call) {
-    map[T.hashCode] = call;
+    links[T.hashCode] = call;
+  }
+
+  void registerUnsupportedViewBinder(ItemViewBinder unsupportedViewBinder) {
+    _unsupportedViewBinder = unsupportedViewBinder;
+  }
+
+  void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? debugViewBinder}) {
+    if (isEnable && !inProduction) {
+      _debugViewBinder = debugViewBinder ?? DefaultDebugViewBinder();
+    } else {
+      debugViewBinder = null;
+    }
   }
 
   Widget getItemBuilder(BuildContext context, int index, dynamic item) {
@@ -39,8 +55,11 @@ class MultiTypeAdapter {
     if (binders.isNotEmpty) {
       itemViewBinder = binders.first;
     } else {
-      itemViewBinder = map[item.runtimeType.hashCode]?.call(index, item);
+      itemViewBinder = links[item.runtimeType.hashCode]?.call(index, item);
     }
-    return itemViewBinder?.buildWidget(context, item, index) ?? const Offstage();
+    Widget? widget = itemViewBinder?.buildWidget(context, item, index);
+    widget ??= _debugViewBinder?.buildWidget(context, item, index);
+    widget ??= _unsupportedViewBinder?.buildWidget(context, item, index);
+    return widget ?? const Offstage();
   }
 }

@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_multitype/multitype.dart';
 
 /// * Description:
@@ -13,10 +10,4 @@ class StringViewBinder2 extends ItemViewBinder<String> {
   Widget buildWidget(BuildContext context, String item, int index) {
     return Text("StringViewBinder2 \n 值为 $item");
   }
-
-  // @override
-  // bool canBuild(item, int index) {
-  //   var a = item.runtimeType;
-  //   return item.runtimeType == String;
-  // }
 }
