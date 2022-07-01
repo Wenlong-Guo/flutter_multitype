@@ -1,11 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 import 'multitype_adapter.dart';
-import 'multitype_listview.dart';
 
-/// * Description:
+/// * Description: 数据视图绑定器的抽象
 /// * Author:      郭文龙
 /// * Date:        2022/6/28 14:37
 /// * Email:       guowenlong20000@sina.com
@@ -17,7 +14,6 @@ abstract class ItemViewBinder<T> {
   }
 
   Linker<T>? findLinker(dynamic item, int index) {
-    var a = item.runtimeType.hashCode;
     Linker? linker = adapter?.map[item.runtimeType.hashCode];
     if (linker != null) {
       return linker as Linker<T>;

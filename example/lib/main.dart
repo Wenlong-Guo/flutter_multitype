@@ -53,25 +53,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var items = [];
+  var items = [0, "1", 2, "3", 4, "5", 10, "11", 12, "13", 14, "15"];
+
   ScrollController controller = ScrollController();
+
+  MultiTypeAdapter adapter = MultiTypeAdapter.newInstance((adapter) {
+    adapter.register(IntViewBinder());
+    adapter.registerOneToMany<String>((position, item) {
+      if (item == "1" || item == "5") {
+        return StringViewBinder();
+      } else {
+        return StringViewBinder2();
+      }
+    });
+  });
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: MultiTypeListView(
-        items: [0, "1", 2, "3", 4, "5"],
-        register: (adapter) {
-          adapter.register(IntViewBinder());
-          adapter.registerOneToMany<String>((position, item) {
-            if (item == "1" || item == "5") {
-              return StringViewBinder();
-            } else {
-              return StringViewBinder2();
-            }
-          });
+      child: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return adapter.getItemBuilder(context, index, items[index]);
         },
-        multiTypeAdapter: MultiTypeAdapter(),
       ),
     );
   }

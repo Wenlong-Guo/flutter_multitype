@@ -6,4 +6,3 @@ library multitype;
 
 export 'multitype/item_view_binder.dart';
 export 'multitype/multitype_adapter.dart';
-export 'multitype/multitype_listview.dart';
