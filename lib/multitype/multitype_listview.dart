@@ -1,10 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_multitype/multitype.dart';
 
 import 'item_view_binder.dart';
 import 'multitype_adapter.dart';
 
 typedef Linker<T> = ItemViewBinder<T> Function(int position, dynamic item);
+
+typedef Register = Function(MultiTypeAdapter adapter);
 
 /// * Description: 多种 Type 的 ListView
 /// * Author:      郭文龙
@@ -12,11 +15,13 @@ typedef Linker<T> = ItemViewBinder<T> Function(int position, dynamic item);
 /// * Email:       guowenlong20000@sina.com
 class MultiTypeListView extends ListView {
   final List<dynamic> items;
-  final MultiTypeAdapter? adapter;
+  final Register register;
+  final MultiTypeAdapter multiTypeAdapter;
 
   MultiTypeListView({
     required this.items,
-    required this.adapter,
+    required this.register,
+    required this.multiTypeAdapter,
     Key? key,
     Axis scrollDirection = Axis.vertical,
     bool reverse = false,
@@ -38,34 +43,41 @@ class MultiTypeListView extends ListView {
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
   }) : super.builder(
-    key: key,
-    scrollDirection: scrollDirection,
-    reverse: reverse,
-    controller: controller,
-    primary: primary,
-    physics: physics,
-    shrinkWrap: shrinkWrap,
-    padding: padding,
-    itemCount: items.length,
-    addAutomaticKeepAlives: addAutomaticKeepAlives,
-    addRepaintBoundaries: addRepaintBoundaries,
-    addSemanticIndexes: addSemanticIndexes,
-    cacheExtent: cacheExtent,
-    semanticChildCount: semanticChildCount,
-    dragStartBehavior: dragStartBehavior,
-    keyboardDismissBehavior: keyboardDismissBehavior,
-    restorationId: restorationId,
-    clipBehavior: clipBehavior,
-    itemBuilder: (context, index) {
-      var item = items[index];
-      adapter!.itemViewBinders.forEach((element) {
-        var flag = element.isMatch(item, index);
-        "flag$flag";
-      });
-      var itemViewBinder = adapter.itemViewBinders.firstWhere((element) => element.isMatch(item, index)/*,orElse: () {}*/);
-      var linker = itemViewBinder.findLinker(item, index);
-      itemViewBinder = linker?.call(index,item) ?? itemViewBinder;
-      return itemViewBinder.buildWidget(context, item, index);
-    },
-  );
+          key: key,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          controller: controller,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          itemCount: items.length,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+          cacheExtent: cacheExtent,
+          semanticChildCount: semanticChildCount,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+          itemBuilder: (context, index) {
+            var item = items[index];
+            ItemViewBinder? itemViewBinder;
+            var binders = multiTypeAdapter.itemViewBinders.where((element) => element.isMatch(item, index));
+            if (binders.isNotEmpty) {
+              itemViewBinder = binders.first;
+            } else {
+              var linker = multiTypeAdapter.map[item.runtimeType.hashCode];
+              itemViewBinder = linker?.call(index, item);
+            }
+            return itemViewBinder?.buildWidget(context, item, index) ?? const Offstage();
+          },
+        );
+
+  @override
+  Widget build(BuildContext context) {
+    register.call(multiTypeAdapter);
+    return super.build(context);
+  }
 }

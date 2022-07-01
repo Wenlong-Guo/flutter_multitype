@@ -13,14 +13,11 @@ class MultiTypeAdapter {
   List<ItemViewBinder> itemViewBinders = [];
 
   void register<T>(ItemViewBinder<T> binder) {
-    T.runtimeType.toString();
-
     itemViewBinders.add(binder);
     binder.adapter = this;
   }
 
   void registerOneToMany<T>(Linker<T> call) {
-    var a = T.runtimeType.hashCode;
-    map[a] = call;
+    map[T.hashCode] = call;
   }
 }

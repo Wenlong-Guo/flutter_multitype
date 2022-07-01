@@ -58,20 +58,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var adapter = MultiTypeAdapter();
-    adapter.register(IntViewBinder());
-    // adapter.register(StringViewBinder());
-    adapter.registerOneToMany<String>((position, item) {
-      if (item == "1" || item == "5") {
-        return StringViewBinder();
-      } else {
-        return StringViewBinder2();
-      }
-    });
     return Center(
       child: MultiTypeListView(
         items: [0, "1", 2, "3", 4, "5"],
-        adapter: adapter,
+        register: (adapter) {
+          adapter.register(IntViewBinder());
+          adapter.registerOneToMany<String>((position, item) {
+            if (item == "1" || item == "5") {
+              return StringViewBinder();
+            } else {
+              return StringViewBinder2();
+            }
+          });
+        },
+        multiTypeAdapter: MultiTypeAdapter(),
       ),
     );
   }
