@@ -4,6 +4,7 @@ import 'package:flutter_multitype/multitype.dart';
 import 'int_view_binder.dart';
 import 'string_view_binder.dart';
 import 'string_view_binder2.dart';
+
 /// * Description: 列表布局
 /// * Author:      郭文龙
 /// * Date:        2022/7/1 18:10
@@ -51,8 +52,11 @@ class _MyHomePageState extends State<SimplePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: ListView.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
           return adapter.getItemBuilder(context, index, items[index]);
