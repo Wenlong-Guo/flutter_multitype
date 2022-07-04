@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'home_page.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 61, 73, 85)
       ),
       title: 'Flutter Demo',
+      builder: EasyLoading.init(),
       home: const HomePage(title: 'MultiType Sample'),
     );
   }
