@@ -1,4 +1,5 @@
 import 'package:example/bilibili/bilibili_page.dart';
+import 'package:example/chat/chat_page.dart';
 import 'package:flutter/material.dart';
 
 import 'simple/simple_page.dart';
@@ -51,7 +52,10 @@ class _HomePageState extends State<HomePage> {
                     backgroundColor: const Color.fromARGB(255, 234, 86, 69),
                     textStyle: const TextStyle(fontSize: 14),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChatPage()));
+                  },
                   child: const Text(
                     "Chat Page",
                     style: TextStyle(fontSize: 18, color: Colors.white),
