@@ -5,10 +5,10 @@
 class Data {
   static List<dynamic> getChatMessageData() {
     List<dynamic> list = [];
-    list.add(ChatMessage("1", 0, "Hello,boy!", null, "assets/images/chat/image_c01.png", null, true));
-    list.add(ChatMessage("2", 1, "Hei，girl", null, "assets/images/chat/image_c02.png", null, false));
-    list.add(ChatMessage("3", 2, "给你一张我的自拍", null, "assets/images/chat/image_c01.png", null, true));
-    list.add(ChatMessage("4", 3, "我也给你一张吧", null, "assets/images/chat/image_c02.png", null, false));
+    list.add(ChatMessage("1", 0, "Hello,\n boy!", null, "assets/images/chat/image_c01.png", null, true));
+    list.add(ChatMessage("2", 1, "Hei，\n girl \n", null, "assets/images/chat/image_c02.png", null, false));
+    list.add(ChatMessage("3", 2, null, "assets/images/chat/image_gong.png", "assets/images/chat/image_c01.png", null, true));
+    list.add(ChatMessage("4", 3, null, "assets/images/bilibili/image_h01.png", "assets/images/chat/image_c02.png", null, false));
     list.add(ChatMessage("5", 4, "发个红包给你", null, "assets/images/chat/image_c01.png", null, true));
     list.add(ChatMessage("6", 5, "还你一个红包", null, "assets/images/chat/image_c02.png", null, false));
     list.add(ChatMessage("7", 6, "给你发个表情", null, "assets/images/chat/image_c01.png", null, true));

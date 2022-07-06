@@ -66,15 +66,17 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Chat Page"),
-      ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return adapter.getItemBuilder(context, index, items[index]);
-        },
-      ),
-    );
+        appBar: AppBar(
+          title: const Text("Chat Page"),
+        ),
+        body: Container(
+          margin: const EdgeInsets.all(12),
+          child: ListView.builder(
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              return adapter.getItemBuilder(context, index, items[index]);
+            },
+          ),
+        ));
   }
 }
