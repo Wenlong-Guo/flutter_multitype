@@ -1,10 +1,10 @@
-import 'package:example/bilibili/data.dart';
+import 'package:example/media/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_multitype/multitype.dart';
 
-/// * Description:
+/// * Description: 仿媒体类应用的ViewBinder
 /// * Author:      郭文龙
 /// * Date:        2022/7/4 11:01
 /// * Email:       guowenlong20000@sina.com
@@ -59,7 +59,7 @@ class ContentViewBinder extends ItemViewBinder<List<CategorySubContent>> {
         },
         child: Column(
           children: [
-            Image.asset("assets/images/bilibili/${element.url}"),
+            Image.asset("assets/images/media/${element.url}"),
             Container(
                 margin: const EdgeInsets.all(6),
                 child: Text(

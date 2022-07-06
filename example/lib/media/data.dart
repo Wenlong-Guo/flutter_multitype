@@ -1,11 +1,10 @@
-import 'dart:convert';
 
 /// * Description: 测试数据
 /// * Author:      郭文龙
 /// * Date:        2022/7/4 10:39
 /// * Email:       guowenlong20000@sina.com
 class Data {
-  static List<dynamic> getBilibiliData() {
+  static List<dynamic> getMediaData() {
     List<dynamic> list = [];
     List<CategorySubContent> subCN = [];
     list.add(CategoryName("灌篮高手"));

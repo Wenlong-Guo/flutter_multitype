@@ -1,8 +1,6 @@
-import 'package:example/bilibili/bilibili_page.dart';
+import 'package:example/media/media_page.dart';
 import 'package:example/chat/chat_page.dart';
 import 'package:flutter/material.dart';
-
-import 'simple/simple_page.dart';
 
 /// * Description: 首页
 /// * Author:      郭文龙
@@ -73,10 +71,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const BilibiliPage()));
+                        builder: (context) => const MediaPage()));
                   },
                   child: const Text(
-                    "Bilibili Page",
+                    "Media Page",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
@@ -92,44 +90,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   onPressed: () {},
                   child: const Text(
-                    "Select Page",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(15),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
-                    textStyle: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    "One To Many Page",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(15),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
-                    textStyle: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SimplePage(
-                              title: 'Simple',
-                            )));
-                  },
-                  child: const Text(
-                    "Simple Page",
+                    "Blog Page",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),

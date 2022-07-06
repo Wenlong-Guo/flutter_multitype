@@ -1,15 +1,16 @@
 import 'package:example/chat/data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_multitype/multitype.dart';
 
-/// * Description:
+String defaultAvatarUrl = "assets/images/chat/image_c05.png";
+
+typedef OnItemTap<T> = Function(BuildContext context, ChatMessage item, int index);
+
+/// * Description: 仿IM类软件的ViewBinder
 /// * Author:      郭文龙
 /// * Date:        2022/7/5 23:36
 /// * Email:       guowenlong20000@sina.com
-String defaultAvatarUrl = "assets/images/chat/image_c05.png";
-
 class TextMeViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {
@@ -22,21 +23,21 @@ class TextMeViewBinder extends ItemViewBinder<ChatMessage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Flexible(
-              child: Container(
-                  padding: const EdgeInsets.all(12),
-                  margin: const EdgeInsets.all(12),
-                  alignment: Alignment.topRight,
-                  decoration: const BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  ),
-                  child: Text(
-                    "${item.content}",
-                    style: const TextStyle(fontSize: 20, color: Colors.black),
-                    textAlign: TextAlign.left,
-                  )),
-            ),
+             Container(
+                    padding: const EdgeInsets.all(12),
+                    margin: const EdgeInsets.all(12),
+                    alignment: Alignment.topRight,
+                    decoration: const BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    ),
+                    child: Text(
+                      "${item.content}",
+                      style: const TextStyle(fontSize: 20, color: Colors.black),
+                      softWrap : true,
+                      textAlign: TextAlign.left,
+                    )),
+
             Container(
               margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
               alignment: Alignment.topRight,
@@ -179,8 +180,6 @@ class ImageOtherViewBinder extends ItemViewBinder<ChatMessage> {
         ));
   }
 }
-
-typedef OnItemTap<T> = Function(BuildContext context, ChatMessage item, int index);
 
 class RedPacketMeViewBinder extends ItemViewBinder<ChatMessage> {
   OnItemTap<ChatMessage> onItemTap;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_multitype/multitype.dart';
 
-/// * Description: 仿聊天页面
+/// * Description: 仿IM类软件的应用场景
 /// * Author:      郭文龙
 /// * Date:        2022/7/2 3:11
 /// * Email:       guowenlong20000@sina.com
@@ -23,7 +23,6 @@ class _ChatPageState extends State<ChatPage> {
     MultiTypeAdapter adapter = MultiTypeAdapter.newInstance((adapter) {
       adapter.registerOneToMany<ChatMessage>((position, item) {
         var message = item as ChatMessage;
-        print("message$message");
         if (message.isMe == true) {
           switch (message.type) {
             case 0:
