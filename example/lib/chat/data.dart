@@ -12,7 +12,7 @@ class Data {
     list.add(ChatMessage("1", 0, "下方红包可以点击", null, "assets/images/chat/image_c01.png", null, true));
     list.add(ChatMessage("5", 4, null, null, "assets/images/chat/image_c01.png", false, true));
     list.add(ChatMessage("6", 5, null, null, "assets/images/chat/image_c02.png", false, false));
-    list.add(ChatMessage("2", 1, "上方红包可以点击！！！", null, "assets/images/chat/image_c02.png", null, false));
+    list.add(ChatMessage("2", 1, "上方红包可以点击！", null, "assets/images/chat/image_c02.png", null, false));
     list.add(ChatMessage("7", 6, "给你发个表情", null, "assets/images/chat/image_c01.png", null, true));
     list.add(ChatMessage("8", 7, "我也给你一个表情", null, "assets/images/chat/image_c02.png", null, false));
     return list;

@@ -23,21 +23,26 @@ class TextMeViewBinder extends ItemViewBinder<ChatMessage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-             Container(
-                    padding: const EdgeInsets.all(12),
-                    margin: const EdgeInsets.all(12),
-                    alignment: Alignment.topRight,
-                    decoration: const BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            Flexible(
+                child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 0.0,
+                      minHeight: 0.0,
+                      maxWidth: 260.0,
                     ),
-                    child: Text(
-                      "${item.content}",
-                      style: const TextStyle(fontSize: 20, color: Colors.black),
-                      softWrap : true,
-                      textAlign: TextAlign.left,
-                    )),
-
+                    child: Container(
+                        padding: const EdgeInsets.all(12),
+                        margin: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Text(
+                          "${item.content}",
+                          style: const TextStyle(fontSize: 20, color: Colors.black),
+                          softWrap: true,
+                          textAlign: TextAlign.left,
+                        )))),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
               alignment: Alignment.topRight,
@@ -76,20 +81,27 @@ class TextOtherViewBinder extends ItemViewBinder<ChatMessage> {
             ),
           ),
           Flexible(
-            child: Container(
-                padding: const EdgeInsets.all(12),
-                margin: const EdgeInsets.all(12),
-                alignment: Alignment.topLeft,
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-                child: Text(
-                  "${item.content}",
-                  style: const TextStyle(fontSize: 20, color: Colors.white),
-                  textAlign: TextAlign.left,
-                )),
-          ),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                minWidth: 0.0,
+                minHeight: 0.0,
+                maxWidth: 260.0,
+              ),
+              child: Container(
+                  padding: const EdgeInsets.all(12),
+                  margin: const EdgeInsets.all(12),
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  ),
+                  child: Text(
+                    "${item.content}",
+                    softWrap: true,
+                    style: const TextStyle(fontSize: 20, color: Colors.white),
+                    textAlign: TextAlign.left,
+                  )),
+            ),
+          )
         ],
       )),
     );
