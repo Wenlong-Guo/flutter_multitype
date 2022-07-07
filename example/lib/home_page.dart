@@ -2,6 +2,8 @@ import 'package:example/media/media_page.dart';
 import 'package:example/chat/chat_page.dart';
 import 'package:flutter/material.dart';
 
+import 'blog/blog_page.dart';
+
 /// * Description: 首页
 /// * Author:      郭文龙
 /// * Date:        2022/7/2 2:45
@@ -88,7 +90,10 @@ class _HomePageState extends State<HomePage> {
                     backgroundColor: const Color.fromARGB(255, 234, 86, 69),
                     textStyle: const TextStyle(fontSize: 14),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const BlogPage()));
+                  },
                   child: const Text(
                     "Blog Page",
                     style: TextStyle(fontSize: 18, color: Colors.white),

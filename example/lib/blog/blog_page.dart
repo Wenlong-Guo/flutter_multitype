@@ -1,6 +1,8 @@
-import 'package:example/chat/data.dart';
+import 'package:example/blog/binder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_multitype/multitype.dart';
+
+import 'data.dart';
 
 /// * Description: 仿博客类App的应用场景
 /// * Author:      郭文龙
@@ -12,21 +14,32 @@ class BlogPage extends StatefulWidget {
   @override
   State<BlogPage> createState() => _BlogPageState();
 }
+
 class _BlogPageState extends State<BlogPage> {
-  List<dynamic> items = Data.getChatMessageData();
+  List<dynamic> items = Data.getBlogMessageData();
 
   @override
   Widget build(BuildContext context) {
     MultiTypeAdapter adapter = MultiTypeAdapter.newInstance((adapter) {
-      // adapter.registerOneToMany<ChatMessage>((position, item) {
-      //
-      // });
+      adapter.registerOneToMany<BlogMessage>((position, item) {
+        BlogMessage blog = item as BlogMessage;
+        switch (blog.imageUrls?.length) {
+          case 1:
+            return OneImageViewBinder();
+          case 2:
+            return TwoImageViewBinder();
+          case 4:
+            return FourImageViewBinder();
+          default:
+            return OneImageViewBinder();
+        }
+      });
       adapter.setDebugViewBinderEnable(isEnable: true);
     });
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Chat Page"),
+          title: const Text("Blog Page"),
         ),
         body: Container(
           margin: const EdgeInsets.all(12),
