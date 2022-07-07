@@ -30,8 +30,15 @@ class _BlogPageState extends State<BlogPage> {
             return TwoImageViewBinder();
           case 4:
             return FourImageViewBinder();
+          case 3:
+          case 5:
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+            return OtherViewBinder();
           default:
-            return OneImageViewBinder();
+            return NoImageViewBinder();
         }
       });
       adapter.setDebugViewBinderEnable(isEnable: true);

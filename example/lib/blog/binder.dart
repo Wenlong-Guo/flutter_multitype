@@ -16,46 +16,63 @@ class OneImageViewBinder extends ItemViewBinder<BlogMessage> {
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
     return InkWell(
       onTap: () {
-        EasyLoading.showToast("点击了 TextOtherViewBinder} $index");
+        EasyLoading.showToast("点击了 OneImageViewBinder} $index");
         // onItemTap(context, item, index);
       },
-      child: IntrinsicHeight(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                alignment: Alignment.topLeft,
-                child: Image.asset(
-                  item.avatar ?? defaultAvatarUrl,
-                  width: 40,
-                  height: 40,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              item.avatar ?? defaultAvatarUrl,
+              width: 40,
+              height: 40,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: Text(
+                    "${item.name}",
+                    softWrap: true,
+                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                  ),
                 ),
-              ),
-              Flexible(
-                child: ConstrainedBox(
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 0.0,
+                      minHeight: 0.0,
+                      maxWidth: 260.0,
+                    ),
+                    child: Text(
+                      "${item.content}",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
+                ConstrainedBox(
                   constraints: const BoxConstraints(
-                    minWidth: 0.0,
-                    minHeight: 0.0,
-                    maxWidth: 260.0,
+                    minWidth: 100.0,
+                    minHeight: 100.0,
+                    maxWidth: 250.0,
+                    maxHeight: 500.0,
                   ),
                   child: Container(
-                      padding: const EdgeInsets.all(12),
-                      margin: const EdgeInsets.all(12),
+                      margin: const EdgeInsets.fromLTRB(4, 8, 0, 0),
                       decoration: const BoxDecoration(
-                        color: Colors.black,
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
-                      child: Text(
-                        "${item.content}",
-                        softWrap: true,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                        textAlign: TextAlign.left,
-                      )),
+                      child: Image.asset(item.imageUrls![0])),
                 ),
-              )
-            ],
-          )),
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -65,46 +82,75 @@ class TwoImageViewBinder extends ItemViewBinder<BlogMessage> {
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
     return InkWell(
       onTap: () {
-        EasyLoading.showToast("点击了 TextOtherViewBinder} $index");
+        EasyLoading.showToast("点击了 OneImageViewBinder} $index");
         // onItemTap(context, item, index);
       },
-      child: IntrinsicHeight(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                alignment: Alignment.topLeft,
-                child: Image.asset(
-                  item.avatar ?? defaultAvatarUrl,
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-              Flexible(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    minWidth: 0.0,
-                    minHeight: 0.0,
-                    maxWidth: 260.0,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              item.avatar ?? defaultAvatarUrl,
+              width: 40,
+              height: 40,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: Text(
+                    "${item.name}",
+                    softWrap: true,
+                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
                   ),
-                  child: Container(
-                      padding: const EdgeInsets.all(12),
-                      margin: const EdgeInsets.all(12),
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      ),
-                      child: Text(
-                        "${item.content}",
-                        softWrap: true,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                        textAlign: TextAlign.left,
-                      )),
                 ),
-              )
-            ],
-          )),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 0.0,
+                      minHeight: 0.0,
+                      maxWidth: 260.0,
+                    ),
+                    child: Text(
+                      "${item.content}",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(4, 8, 0, 0),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Image.asset(
+                          item.imageUrls![0],
+                          fit: BoxFit.cover,
+                          width: 125,
+                          height: 125,
+                        )),
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(4, 8, 0, 0),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Image.asset(
+                          item.imageUrls![1],
+                          fit: BoxFit.cover,
+                          width: 125,
+                          height: 125,
+                        )),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -114,46 +160,101 @@ class FourImageViewBinder extends ItemViewBinder<BlogMessage> {
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
     return InkWell(
       onTap: () {
-        EasyLoading.showToast("点击了 TextOtherViewBinder} $index");
+        EasyLoading.showToast("点击了 OneImageViewBinder} $index");
         // onItemTap(context, item, index);
       },
-      child: IntrinsicHeight(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                alignment: Alignment.topLeft,
-                child: Image.asset(
-                  item.avatar ?? defaultAvatarUrl,
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-              Flexible(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    minWidth: 0.0,
-                    minHeight: 0.0,
-                    maxWidth: 260.0,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              item.avatar ?? defaultAvatarUrl,
+              width: 40,
+              height: 40,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: Text(
+                    "${item.name}",
+                    softWrap: true,
+                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
                   ),
-                  child: Container(
-                      padding: const EdgeInsets.all(12),
-                      margin: const EdgeInsets.all(12),
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      ),
-                      child: Text(
-                        "${item.content}",
-                        softWrap: true,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                        textAlign: TextAlign.left,
-                      )),
                 ),
-              )
-            ],
-          )),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 0.0,
+                      minHeight: 0.0,
+                      maxWidth: 260.0,
+                    ),
+                    child: Text(
+                      "${item.content}",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(4, 8, 0, 0),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Image.asset(
+                          item.imageUrls![0],
+                          fit: BoxFit.cover,
+                          width: 125,
+                          height: 125,
+                        )),
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(4, 8, 0, 0),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Image.asset(
+                          item.imageUrls![1],
+                          fit: BoxFit.cover,
+                          width: 125,
+                          height: 125,
+                        )),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(4, 4, 0, 0),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Image.asset(
+                          item.imageUrls![2],
+                          fit: BoxFit.cover,
+                          width: 125,
+                          height: 125,
+                        )),
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(4, 4, 0, 0),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        ),
+                        child: Image.asset(
+                          item.imageUrls![3],
+                          fit: BoxFit.cover,
+                          width: 125,
+                          height: 125,
+                        )),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -163,46 +264,140 @@ class OtherViewBinder extends ItemViewBinder<BlogMessage> {
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
     return InkWell(
       onTap: () {
-        EasyLoading.showToast("点击了 TextOtherViewBinder} $index");
+        EasyLoading.showToast("点击了 OtherViewBinder} $index");
         // onItemTap(context, item, index);
       },
-      child: IntrinsicHeight(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                alignment: Alignment.topLeft,
-                child: Image.asset(
-                  item.avatar ?? defaultAvatarUrl,
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-              Flexible(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    minWidth: 0.0,
-                    minHeight: 0.0,
-                    maxWidth: 260.0,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              item.avatar ?? defaultAvatarUrl,
+              width: 40,
+              height: 40,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: Text(
+                    "${item.name}",
+                    softWrap: true,
+                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
                   ),
-                  child: Container(
-                      padding: const EdgeInsets.all(12),
-                      margin: const EdgeInsets.all(12),
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      ),
-                      child: Text(
-                        "${item.content}",
-                        softWrap: true,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                        textAlign: TextAlign.left,
-                      )),
                 ),
-              )
-            ],
-          )),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 0.0,
+                      minHeight: 0.0,
+                      maxWidth: 260.0,
+                    ),
+                    child: Text(
+                      "${item.content}",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
+                Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 8, 0, 0),
+                    child: ConstrainedBox(
+                        constraints: const BoxConstraints(minWidth: 0.0, minHeight: 0.0, maxWidth: 250.0, maxHeight: 250),
+                        child: GridView.count(
+                          childAspectRatio: 1 / 1,
+                          padding: EdgeInsets.zero,
+                          //父布局滑动冲突
+                          primary: false,
+                          //处理listview嵌套报错
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 2,
+                          mainAxisSpacing: 2,
+                          children: getItemWidget(item.imageUrls ?? []),
+                        ))),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  List<Widget> getItemWidget(List<String> item) {
+    List<Widget> list = [];
+    for (var element in item) {
+      list.add(InkWell(
+        onTap: () {
+          EasyLoading.showToast("点击的图片地址是$element");
+        },
+        child: Column(
+          children: [
+            Image.asset(
+              element,
+              fit: BoxFit.cover,
+              width: 80,
+              height: 80,
+            ),
+          ],
+        ),
+      ));
+    }
+    return list;
+  }
+}
+
+class NoImageViewBinder extends ItemViewBinder<BlogMessage> {
+  @override
+  Widget buildWidget(BuildContext context, BlogMessage item, int index) {
+    return InkWell(
+      onTap: () {
+        EasyLoading.showToast("点击了 OtherViewBinder} $index");
+        // onItemTap(context, item, index);
+      },
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              item.avatar ?? defaultAvatarUrl,
+              width: 40,
+              height: 40,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: Text(
+                    "${item.name}",
+                    softWrap: true,
+                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 0.0,
+                      minHeight: 0.0,
+                      maxWidth: 260.0,
+                    ),
+                    child: Text(
+                      "${item.content}",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
