@@ -3,14 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_multitype/multitype.dart';
 
+///默认头像地址
 String defaultAvatarUrl = "assets/images/chat/image_c05.png";
 
+///item的点击事件
 typedef OnItemTap<T> = Function(BuildContext context, ChatMessage item, int index);
 
 /// * Description: 仿IM类软件的ViewBinder
 /// * Author:      郭文龙
 /// * Date:        2022/7/5 23:36
 /// * Email:       guowenlong20000@sina.com
+
+///自己发的纯文字消息
 class TextMeViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {
@@ -59,6 +63,7 @@ class TextMeViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///对方发的纯文字消息
 class TextOtherViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {
@@ -108,6 +113,7 @@ class TextOtherViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///自己发的纯图片消息
 class ImageMeViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {
@@ -151,6 +157,7 @@ class ImageMeViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///对方发的纯图片消息
 class ImageOtherViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {
@@ -193,6 +200,7 @@ class ImageOtherViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///自己发的红包消息
 class RedPacketMeViewBinder extends ItemViewBinder<ChatMessage> {
   OnItemTap<ChatMessage> onItemTap;
 
@@ -244,6 +252,7 @@ class RedPacketMeViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///对方发的红包消息
 class RedPacketOtherViewBinder extends ItemViewBinder<ChatMessage> {
   OnItemTap<ChatMessage> onItemTap;
 
@@ -296,6 +305,7 @@ class RedPacketOtherViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///自己发的未知消息
 class UnknownMeViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {
@@ -339,6 +349,7 @@ class UnknownMeViewBinder extends ItemViewBinder<ChatMessage> {
   }
 }
 
+///对方发的未知消息
 class UnknownOtherViewBinder extends ItemViewBinder<ChatMessage> {
   @override
   Widget buildWidget(BuildContext context, ChatMessage item, int index) {

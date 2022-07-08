@@ -11,6 +11,8 @@ String defaultAvatarUrl = "assets/images/chat/image_c05.png";
 /// * Author:      郭文龙
 /// * Date:        2022/7/7 0:12
 /// * Email:       guowenlong20000@sina.com
+
+///一张图片的博文
 class OneImageViewBinder extends ItemViewBinder<BlogMessage> {
   @override
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
@@ -77,6 +79,7 @@ class OneImageViewBinder extends ItemViewBinder<BlogMessage> {
   }
 }
 
+///2张图片的博文
 class TwoImageViewBinder extends ItemViewBinder<BlogMessage> {
   @override
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
@@ -155,6 +158,7 @@ class TwoImageViewBinder extends ItemViewBinder<BlogMessage> {
   }
 }
 
+///四张图片的博文
 class FourImageViewBinder extends ItemViewBinder<BlogMessage> {
   @override
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {
@@ -259,6 +263,7 @@ class FourImageViewBinder extends ItemViewBinder<BlogMessage> {
   }
 }
 
+///没有图片的博文
 class OtherViewBinder extends ItemViewBinder<BlogMessage> {
   @override
   Widget buildWidget(BuildContext context, BlogMessage item, int index) {

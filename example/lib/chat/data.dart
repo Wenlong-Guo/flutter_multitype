@@ -13,14 +13,21 @@ class Data {
     list.add(ChatMessage("5", 4, null, null, "assets/images/chat/image_c01.png", false, true));
     list.add(ChatMessage("6", 5, null, null, "assets/images/chat/image_c02.png", false, false));
     list.add(ChatMessage("2", 1, "上方红包可以点击！", null, "assets/images/chat/image_c02.png", null, false));
-    list.add(ChatMessage("7", 6, "给你发个表情", null, "assets/images/chat/image_c01.png", null, true));
-    list.add(ChatMessage("8", 7, "我也给你一个表情", null, "assets/images/chat/image_c02.png", null, false));
+    list.add(ChatMessage("7", 6, null, null, "assets/images/chat/image_c01.png", null, true));
+    list.add(ChatMessage("8", 7, null, null, "assets/images/chat/image_c02.png", null, false));
     return list;
   }
 }
 
 class ChatMessage {
   String? id;
+  ///0-自己发的纯文字消息
+  ///1-对方发的纯文字消息
+  ///2-自己发的图片消息
+  ///3-对方发的图片消息
+  ///4-自己发的红包消息
+  ///5-对方发的红包消息
+  ///6以及以后 新版本的未知消息
   int? type;
   String? content;
   String? imageUrl;
