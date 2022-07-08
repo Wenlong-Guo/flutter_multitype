@@ -33,69 +33,66 @@ class _HomePageState extends State<HomePage> {
               child: TextButton(
                   style: TextButton.styleFrom(
                     padding: const EdgeInsets.all(15),
+                    primary: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
+                    textStyle: const TextStyle(fontSize: 14),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatPage()));
+                  },
+                  child: const Text(
+                    "Chat Page Sample",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  )),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.all(15),
+              child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(15),
+                    primary: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
+                    textStyle: const TextStyle(fontSize: 14),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MediaPage()));
+                  },
+                  child: const Text(
+                    "Media Page Sample",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  )),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.all(15),
+              child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(15),
+                    primary: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
+                    textStyle: const TextStyle(fontSize: 14),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BlogPage()));
+                  },
+                  child: const Text(
+                    "Blog Page Sample",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  )),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.all(15),
+              child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(15),
                     backgroundColor: const Color.fromARGB(255, 234, 86, 69),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
                   onPressed: () {},
                   child: const Text(
-                    "Comprehensive Page",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(15),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
-                    textStyle: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ChatPage()));
-                  },
-                  child: const Text(
-                    "Chat Page",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(15),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
-                    textStyle: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const MediaPage()));
-                  },
-                  child: const Text(
-                    "Media Page",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(15),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 234, 86, 69),
-                    textStyle: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const BlogPage()));
-                  },
-                  child: const Text(
-                    "Blog Page",
+                    "More Samples Coming Soon",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
