@@ -5,6 +5,7 @@ import 'package:flutter_multitype/multitype.dart';
 import 'data.dart';
 
 /// * Description: 仿博客类App的应用场景
+/// *              注:这种实现方式比较勉强,只是为了展示一对多的使用方法
 /// * Author:      郭文龙
 /// * Date:        2022/7/1 18:11
 /// * Email:       guowenlong20000@sina.com

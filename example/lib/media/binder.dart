@@ -12,20 +12,33 @@ class CategoryViewBinder extends ItemViewBinder<CategoryName> {
   @override
   Widget buildWidget(BuildContext context, CategoryName item, int index) {
     return InkWell(
-      onTap: () {
-        EasyLoading.showToast("点击了 ${item.title}");
-        // onItemTap(context, item, index);
-      },
-      child: Container(
-          margin: const EdgeInsets.all(12),
-          height: 40,
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "${item.title}",
-            style: const TextStyle(fontSize: 20, color: Colors.white),
-            textAlign: TextAlign.left,
-          )),
-    );
+        onTap: () {
+          EasyLoading.showToast("点击了 ${item.title}");
+          // onItemTap(context, item, index);
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+                margin: const EdgeInsets.all(12),
+                height: 40,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "${item.title}",
+                  style: const TextStyle(fontSize: 20, color: Colors.white),
+                  textAlign: TextAlign.left,
+                )),
+            Container(
+                margin: const EdgeInsets.all(12),
+                height: 40,
+                alignment: Alignment.centerRight,
+                child: const Text(
+                  "更多",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  textAlign: TextAlign.left,
+                )),
+          ],
+        ));
   }
 }
 

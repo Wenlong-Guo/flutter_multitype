@@ -28,6 +28,7 @@ class Data {
     subJa.add(CategorySubContent("さくらぎ はなみち", "image_h02.png"));
     subJa.add(CategorySubContent("グループ写真2", "image_h03.png"));
     subJa.add(CategorySubContent("るかわ かえで & さくらぎ はなみち", "image_h04.png"));
+    subJa.add(CategorySubContent("るかわ かえで & さくらぎ はなみち", "image_h04.png"));
     list.add(subJa);
     return list;
   }

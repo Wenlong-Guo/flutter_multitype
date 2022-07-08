@@ -17,6 +17,7 @@ class Data {
     "assets/images/blog/img_09.png",
   ];
 
+  ///随机获取指定个数的图片
   static List<String> getRandomImages({int? count}) {
     List<String> list = [];
     var thisCount = count ?? Random().nextInt(10);
