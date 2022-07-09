@@ -138,14 +138,14 @@ Don't worry,debugViewBinder is never show in release,it just show in `!bool.from
 void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? debugViewBinder})
 ```
 ### Screenshots
-<img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_01.jpg" width=216/><img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_02.jpg" width=216/><img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_03.jpg" width=216/>
+<img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_03.jpg" width=216/><img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_02.jpg" width=216/><img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_01.jpg" width=216/>
 
 ### Thanks
 [MultiType](https://github.com/drakeet/MultiType)   
 
 ### 关于作者
 GitHub : [Wenlong-Guo](https://github.com/Wenlong-Guo)  
-Email &nbsp;&nbsp;: guowenlong20000@sina.com   
-WeChat&nbsp;&nbsp;: xiaoguo9745
+Email &nbsp;: guowenlong20000@sina.com   
+WeChat : xiaoguo9745
 
 
