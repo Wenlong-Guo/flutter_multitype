@@ -33,12 +33,25 @@ class MultiTypeAdapter {
     binder.adapter = this;
   }
 
+  void unregister<T>(ItemViewBinder<T> binder) {
+    itemViewBinders.remove(binder);
+    binder.adapter = null;
+  }
+
   void registerOneToMany<T>(Linker<T> call) {
     links[T.hashCode] = call;
   }
 
+  void unregisterOneToMany<T>({Linker<T>? call}) {
+    links.remove(T.hashCode);
+  }
+
   void registerUnsupportedViewBinder(ItemViewBinder unsupportedViewBinder) {
     _unsupportedViewBinder = unsupportedViewBinder;
+  }
+
+  void unregisterUnsupportedViewBinder(ItemViewBinder unsupportedViewBinder) {
+    _unsupportedViewBinder = null;
   }
 
   void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? debugViewBinder}) {
