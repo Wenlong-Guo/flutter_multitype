@@ -1,6 +1,6 @@
 # Flutter Multitype
 
-- [About Flutter Multitype](#About Flutter Multitype)
+- [About Flutter Multitype](#about-flutter-multitype)
 - [Installing](#Installing)
 - [Function](#Function)
     - [Debounce](#Debounce)
@@ -138,15 +138,14 @@ Don't worry,debugViewBinder is never show in release,it just show in `!bool.from
 void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? debugViewBinder})
 ```
 ### Screenshots
+<img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_01.jpg" width=216/><img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_02.jpg" width=216/><img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_03.jpg" width=216/>
 
 ### Thanks
 [MultiType](https://github.com/drakeet/MultiType)   
 
 ### 关于作者
 GitHub : [Wenlong-Guo](https://github.com/Wenlong-Guo)  
-简书 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://www.jianshu.com/u/cbf2ad25d33a)  
-掘金 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://juejin.im/user/5b9e8a92e51d453df0440422/posts)  
-Email &nbsp;&nbsp;: guowenlong20000@sina.com
+Email &nbsp;&nbsp;: guowenlong20000@sina.com   
 WeChat&nbsp;&nbsp;: xiaoguo9745
 
 
