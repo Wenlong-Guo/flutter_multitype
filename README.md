@@ -145,7 +145,7 @@ void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? de
 
 ### 关于作者
 GitHub &nbsp;: [Wenlong-Guo](https://github.com/Wenlong-Guo)  
-Email &nbsp;&nbsp;&nbsp;: guowenlong20000@sina.com   
+Email &nbsp;&nbsp;&nbsp;&nbsp;: guowenlong20000@sina.com   
 WeChat : xiaoguo9745
 
 
