@@ -144,8 +144,8 @@ void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? de
 [MultiType](https://github.com/drakeet/MultiType)   
 
 ### 关于作者
-GitHub : [Wenlong-Guo](https://github.com/Wenlong-Guo)  
-Email &nbsp;: guowenlong20000@sina.com   
+GitHub &nbsp;: [Wenlong-Guo](https://github.com/Wenlong-Guo)  
+Email &nbsp;&nbsp;&nbsp;: guowenlong20000@sina.com   
 WeChat : xiaoguo9745
 
 
