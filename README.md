@@ -1,5 +1,9 @@
 # Flutter Multitype
-
+[![License](https://img.shields.io/github/license/Wenlong-Guo/flutter_multitype)](https://github.com/Wenlong-Guo/flutter_multitype/blob/master/LICENSE)
+[![Release](https://img.shields.io/github/v/release/Wenlong-Guo/flutter_multitype?include_prereleases)
+[![likes](https://badges.bar/flutter_multitype/likes)](https://pub.dev/packages/flutter_multitype/score)
+[![popularity](https://badges.bar/flutter_multitype/popularity)](https://pub.dev/packages/flutter_multitype/score)
+[![pub points](https://badges.bar/flutter_multitype/pub%20points)](https://pub.dev/packages/flutter_multitype/score)
 - [About Flutter Multitype](#about-flutter-multitype)
 - [Installing](#Installing)
 - [Function](#Function)
@@ -155,13 +159,11 @@ But if your data is same type,this function is not suitable.You can use in diffe
 void registerUnsupportedViewBinder(ItemViewBinder unsupportedViewBinder)
 ```
 
+## Easy to debug
 If someone items data have not register, it will be bind debugViewBinder if someone items data have
 not register,at the same time register unsupportedViewBinder and debugViewBinder, debugViewBinder
 will be cover unsupportedViewBinder. Don't worry,debugViewBinder is never show in release,it just
 show in `!bool.fromEnvironment("dart.vm.product")` .
-
-## Easy to debug
-
 ```
 void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? debugViewBinder})
 ```
