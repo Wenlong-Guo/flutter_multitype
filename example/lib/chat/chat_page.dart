@@ -29,19 +29,6 @@ class _ChatPageState extends State<ChatPage> {
               {
                 return TextMeViewBinder();
               }
-            case 2:
-              {
-                return ImageMeViewBinder();
-              }
-            case 4:
-              {
-                return RedPacketMeViewBinder((context, item, index) {
-                  EasyLoading.showToast("领取了红包");
-                  setState(() {
-                    item.isRedPacketMeGet = true;
-                  });
-                });
-              }
             default:
               {
                 return UnknownMeViewBinder();
@@ -52,19 +39,6 @@ class _ChatPageState extends State<ChatPage> {
             case 1:
               {
                 return TextOtherViewBinder();
-              }
-            case 3:
-              {
-                return ImageOtherViewBinder();
-              }
-            case 5:
-              {
-                return RedPacketOtherViewBinder((context, item, index) {
-                  EasyLoading.showToast("领取了红包");
-                  setState(() {
-                    item.isRedPacketMeGet = true;
-                  });
-                });
               }
             default:
               {

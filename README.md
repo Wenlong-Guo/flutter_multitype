@@ -9,9 +9,9 @@
     - [Register unsupported data of item widget](#register-unsupported-data-of-item-widget)
 - [Easy to debug](#easy-to-debug)
 - [Screenshots](#screenshots)
-  - [Chat Sample](#chat-sample)
-  - [Media Sample](#media-sample)
-  - [Blog Sample](#blog-sample)
+    - [Chat Sample](#chat-sample)
+    - [Media Sample](#media-sample)
+    - [Blog Sample](#blog-sample)
 - [Thanks](#thanks)
 - [关于作者](#关于作者)
 
@@ -116,35 +116,32 @@ one data bind many widget,for example:
 
 ```dart
 /// ChatMessage will be bind TextMeViewBinder、TextOtherViewBinder、UnknownMeViewBinder、UnknownOtherViewBinder four Widget
-MultiTypeAdapter adapter = MultiTypeAdapter.newInstance
-(
-(
-adapter) {
+MultiTypeAdapter adapter = MultiTypeAdapter.newInstance((adapter) {
 adapter.registerOneToMany<ChatMessage>((position, item) {
-var message = item as ChatMessage;
-if (message.isMe == true) {
-switch (message.type) {
-case 0:
-{
-return TextMeViewBinder();
-}
-default:
-{
-return UnknownMeViewBinder();
-}
-}
-} else {
-switch (message.type) {
-case 1:
-{
-return TextOtherViewBinder();
-}
-default:
-{
-return UnknownOtherViewBinder();
-}
-}
-}
+  var message = item as ChatMessage;
+  if (message.isMe == true) {
+    switch (message.type) {
+      case 0:
+        {
+          return TextMeViewBinder();
+        }
+      default:
+        {
+          return UnknownMeViewBinder();
+        }
+    }
+  } else {
+    switch (message.type) {
+      case 1:
+        {
+          return TextOtherViewBinder();
+        }
+      default:
+        {
+          return UnknownOtherViewBinder();
+        }
+    }
+  }
 });
 ```
 
@@ -170,13 +167,17 @@ void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? de
 ```
 
 # Screenshots
+
 ## Chat Sample
+
 <img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_03.jpg" width=500/>
 
 ## Media Sample
+
 <img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_02.jpg" width=500/>
 
 ## Blog Sample
+
 <img src="https://github.com/Wenlong-Guo/flutter_multitype/blob/master/example/screenshots/screenshots_01.jpg" width=500/>
 
 # Thanks
