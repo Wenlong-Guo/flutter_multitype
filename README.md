@@ -1,6 +1,6 @@
 # Flutter Multitype
 [![License](https://img.shields.io/github/license/Wenlong-Guo/flutter_multitype)](https://github.com/Wenlong-Guo/flutter_multitype/blob/master/LICENSE)
-[![Release](https://img.shields.io/github/v/release/Wenlong-Guo/flutter_multitype?include_prereleases)
+![Release](https://img.shields.io/github/v/release/Wenlong-Guo/flutter_multitype?include_prereleases)
 [![likes](https://badges.bar/flutter_multitype/likes)](https://pub.dev/packages/flutter_multitype/score)
 [![popularity](https://badges.bar/flutter_multitype/popularity)](https://pub.dev/packages/flutter_multitype/score)
 [![pub points](https://badges.bar/flutter_multitype/pub%20points)](https://pub.dev/packages/flutter_multitype/score)
