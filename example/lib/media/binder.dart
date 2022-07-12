@@ -44,7 +44,8 @@ class CategoryViewBinder extends ItemViewBinder<CategoryName> {
 
 class ContentViewBinder extends ItemViewBinder<List<CategorySubContent>> {
   @override
-  Widget buildWidget(BuildContext context, List<CategorySubContent> item, int index) {
+  Widget buildWidget(
+      BuildContext context, List<CategorySubContent> item, int index) {
     return InkWell(
         onTap: () {},
         child: Container(

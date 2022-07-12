@@ -1,4 +1,3 @@
-
 /// * Description: 测试数据
 /// * Author:      郭文龙
 /// * Date:        2022/7/4 10:39
@@ -19,7 +18,8 @@ class Data {
     subEN.add(CategorySubContent("Group Photo 1", "image_h01.png"));
     subEN.add(CategorySubContent("Sakuragi Hanamichi", "image_h02.png"));
     subEN.add(CategorySubContent("Group Photo 2", "image_h03.png"));
-    subEN.add(CategorySubContent("Rukawa Kaede & Sakuragi Hanamichi", "image_h04.png"));
+    subEN.add(CategorySubContent(
+        "Rukawa Kaede & Sakuragi Hanamichi", "image_h04.png"));
     list.add(subEN);
 
     List<CategorySubContent> subJa = [];

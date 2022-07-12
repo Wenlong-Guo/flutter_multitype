@@ -68,7 +68,8 @@ class MultiTypeAdapter {
   }
 
   ///Set debug data and binding view visible
-  void setDebugViewBinderEnable({bool isEnable = !inProduction, ItemViewBinder? debugViewBinder}) {
+  void setDebugViewBinderEnable(
+      {bool isEnable = !inProduction, ItemViewBinder? debugViewBinder}) {
     if (isEnable && !inProduction) {
       _debugViewBinder = debugViewBinder ?? DefaultDebugViewBinder();
     } else {
@@ -79,7 +80,8 @@ class MultiTypeAdapter {
   ///Parse the data corresponding to the bound view
   Widget getItemBuilder(BuildContext context, int index, dynamic item) {
     ItemViewBinder? itemViewBinder;
-    var binders = itemViewBinders.where((element) => element.isMatch(item, index));
+    var binders =
+        itemViewBinders.where((element) => element.isMatch(item, index));
     if (binders.isNotEmpty) {
       itemViewBinder = binders.first;
     } else {

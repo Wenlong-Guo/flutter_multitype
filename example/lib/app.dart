@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             theme: ThemeData(
-                brightness: Brightness.light, appBarTheme: const AppBarTheme(backgroundColor: Color.fromARGB(255, 61, 73, 85)), scaffoldBackgroundColor: const Color.fromARGB(255, 61, 73, 85)),
+                brightness: Brightness.light,
+                appBarTheme: const AppBarTheme(
+                    backgroundColor: Color.fromARGB(255, 61, 73, 85)),
+                scaffoldBackgroundColor: const Color.fromARGB(255, 61, 73, 85)),
             title: 'Flutter Demo',
             builder: EasyLoading.init(),
             home: const HomePage(title: 'MultiType Samples'),

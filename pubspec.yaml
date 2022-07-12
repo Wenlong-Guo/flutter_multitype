@@ -1,6 +1,6 @@
 name: flutter_multitype
 description: :fire::fire::fire:Easier and more flexible to create multiple types for Flutter ListView.
-version: 0.9.1
+version: 0.9.2
 homepage: https://github.com/Wenlong-Guo/flutter_multitype
 
 environment:

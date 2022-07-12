@@ -39,7 +39,11 @@ class OneImageViewBinder extends ItemViewBinder<BlogMessage> {
                   child: Text(
                     "${item.name}",
                     softWrap: true,
-                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                    style: const TextStyle(
+                        height: 1,
+                        decoration: TextDecoration.none,
+                        fontSize: 20,
+                        color: Colors.white60),
                   ),
                 ),
                 Container(
@@ -106,7 +110,11 @@ class TwoImageViewBinder extends ItemViewBinder<BlogMessage> {
                   child: Text(
                     "${item.name}",
                     softWrap: true,
-                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                    style: const TextStyle(
+                        height: 1,
+                        decoration: TextDecoration.none,
+                        fontSize: 20,
+                        color: Colors.white60),
                   ),
                 ),
                 Container(
@@ -185,7 +193,11 @@ class FourImageViewBinder extends ItemViewBinder<BlogMessage> {
                   child: Text(
                     "${item.name}",
                     softWrap: true,
-                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                    style: const TextStyle(
+                        height: 1,
+                        decoration: TextDecoration.none,
+                        fontSize: 20,
+                        color: Colors.white60),
                   ),
                 ),
                 Container(
@@ -290,7 +302,11 @@ class OtherViewBinder extends ItemViewBinder<BlogMessage> {
                   child: Text(
                     "${item.name}",
                     softWrap: true,
-                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                    style: const TextStyle(
+                        height: 1,
+                        decoration: TextDecoration.none,
+                        fontSize: 20,
+                        color: Colors.white60),
                   ),
                 ),
                 Container(
@@ -310,7 +326,11 @@ class OtherViewBinder extends ItemViewBinder<BlogMessage> {
                 Padding(
                     padding: const EdgeInsets.fromLTRB(4, 8, 0, 0),
                     child: ConstrainedBox(
-                        constraints: const BoxConstraints(minWidth: 0.0, minHeight: 0.0, maxWidth: 250.0, maxHeight: 250),
+                        constraints: const BoxConstraints(
+                            minWidth: 0.0,
+                            minHeight: 0.0,
+                            maxWidth: 250.0,
+                            maxHeight: 250),
                         child: GridView.count(
                           childAspectRatio: 1 / 1,
                           padding: EdgeInsets.zero,
@@ -381,7 +401,11 @@ class NoImageViewBinder extends ItemViewBinder<BlogMessage> {
                   child: Text(
                     "${item.name}",
                     softWrap: true,
-                    style: const TextStyle(height: 1, decoration: TextDecoration.none, fontSize: 20, color: Colors.white60),
+                    style: const TextStyle(
+                        height: 1,
+                        decoration: TextDecoration.none,
+                        fontSize: 20,
+                        color: Colors.white60),
                   ),
                 ),
                 Container(

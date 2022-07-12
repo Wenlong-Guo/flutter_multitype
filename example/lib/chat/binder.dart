@@ -7,7 +7,8 @@ import 'package:flutter_multitype/multitype.dart';
 String defaultAvatarUrl = "assets/images/chat/image_c05.png";
 
 ///item的点击事件
-typedef OnItemTap<T> = Function(BuildContext context, ChatMessage item, int index);
+typedef OnItemTap<T> = Function(
+    BuildContext context, ChatMessage item, int index);
 
 /// * Description: 仿IM类软件的ViewBinder
 /// * Author:      郭文龙
@@ -43,7 +44,8 @@ class TextMeViewBinder extends ItemViewBinder<ChatMessage> {
                         ),
                         child: Text(
                           "${item.content}",
-                          style: const TextStyle(fontSize: 20, color: Colors.black),
+                          style: const TextStyle(
+                              fontSize: 20, color: Colors.black),
                           softWrap: true,
                           textAlign: TextAlign.left,
                         )))),

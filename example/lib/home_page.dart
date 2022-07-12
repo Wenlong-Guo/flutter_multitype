@@ -38,7 +38,8 @@ class _HomePageState extends State<HomePage> {
                     textStyle: const TextStyle(fontSize: 14),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ChatPage()));
                   },
                   child: const Text(
                     "Chat Page Sample",
@@ -56,7 +57,8 @@ class _HomePageState extends State<HomePage> {
                     textStyle: const TextStyle(fontSize: 14),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MediaPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const MediaPage()));
                   },
                   child: const Text(
                     "Media Page Sample",
@@ -74,7 +76,8 @@ class _HomePageState extends State<HomePage> {
                     textStyle: const TextStyle(fontSize: 14),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BlogPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const BlogPage()));
                   },
                   child: const Text(
                     "Blog Page Sample",

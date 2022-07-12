@@ -29,22 +29,46 @@ class Data {
 
   static List<dynamic> getBlogMessageData() {
     List<dynamic> list = [];
-    list.add(BlogMessage("1", "宫城良田", "鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!", getRandomImages(count: 1), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("2", "宫城良田", "鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看", getRandomImages(count: 2), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("3", "宫城良田", "鬼武士!", getRandomImages(count: 3), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("4", "宫城良田", "鬼武士!", getRandomImages(count: 4), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("5", "宫城良田", "鬼武士!", getRandomImages(count: 5), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("6", "宫城良田", "鬼武士!", getRandomImages(count: 6), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("7", "宫城良田", "鬼武士!", getRandomImages(count: 7), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("8", "宫城良田", "鬼武士!", getRandomImages(count: 8), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
-    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(), "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage(
+        "1",
+        "宫城良田",
+        "鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!鬼灭之刃好看!",
+        getRandomImages(count: 1),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage(
+        "2",
+        "宫城良田",
+        "鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看\n鬼灭之刃好看",
+        getRandomImages(count: 2),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("3", "宫城良田", "鬼武士!", getRandomImages(count: 3),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("4", "宫城良田", "鬼武士!", getRandomImages(count: 4),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("5", "宫城良田", "鬼武士!", getRandomImages(count: 5),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("6", "宫城良田", "鬼武士!", getRandomImages(count: 6),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("7", "宫城良田", "鬼武士!", getRandomImages(count: 7),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("8", "宫城良田", "鬼武士!", getRandomImages(count: 8),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
+    list.add(BlogMessage("9", "宫城良田", "鬼武士!", getRandomImages(),
+        "assets/images/chat/image_c01.png"));
     return list;
   }
 }
