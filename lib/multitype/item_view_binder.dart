@@ -9,10 +9,12 @@ import 'multitype_adapter.dart';
 abstract class ItemViewBinder<T> {
   MultiTypeAdapter? adapter;
 
+  ///Whether to match the data and type
   bool isMatch(dynamic item, int index) {
     return item.runtimeType == T;
   }
 
+  ///Search one to many callback
   Linker<T>? findLinker(T item, int index) {
     Linker? linker = adapter?.links[item.runtimeType.hashCode];
     if (linker != null) {
@@ -22,5 +24,6 @@ abstract class ItemViewBinder<T> {
     }
   }
 
+  ///item's widget
   Widget buildWidget(BuildContext context, T item, int index);
 }
