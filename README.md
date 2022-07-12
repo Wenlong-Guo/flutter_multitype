@@ -29,7 +29,7 @@ Add solution to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  flutter_multitype: ^0.9.0
+  flutter_multitype: ^0.9.2
 ```
 
 Import get in files that it will be used:
