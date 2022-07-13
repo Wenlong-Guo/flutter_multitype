@@ -11,7 +11,7 @@
 - [Advanced usage](#advanced-usage)
     - [One to many](#one-to-many)
     - [Register unsupported data of item widget](#register-unsupported-data-of-item-widget)
-- [Easy to debug](#easy-to-debug)
+    - [Easy to debug](#easy-to-debug)
 - [Screenshots](#screenshots)
     - [Chat Sample](#chat-sample)
     - [Media Sample](#media-sample)
@@ -25,7 +25,7 @@
 
 # Installing
 
-Add solution to your pubspec.yaml file:
+Add `flutter_multitype: ^0.9.2` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
